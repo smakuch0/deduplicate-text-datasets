@@ -46,6 +46,8 @@
  * a nice mix of sane rust and then suddenly OH-NO-WHAT-HAVE-YOU-DONE-WHY!?!)
  */ 
 
+ #![allow(warnings)] 
+
 use std::path::Path;
 use std::time::Instant;
 use std::fs;
