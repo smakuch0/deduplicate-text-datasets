@@ -32,6 +32,7 @@ start = 0
 while len(remove) > 0:
     a,b = remove.pop()
     new_ds.write(ds.read(a-start))
+    new_ds.write(b' ')
     ds.seek(b)
     start = b
 new_ds.write(ds.read())
