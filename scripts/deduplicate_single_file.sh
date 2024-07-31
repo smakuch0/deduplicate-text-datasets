@@ -1,8 +1,8 @@
 set -e
 cargo build
 mkdir -p tmp
-rm -f /tmp/cache/dups_merged_files.txt_*
-rm -f /tmp/cache/sizes_merged_files.txt_*
+rm -f /tmp/cache/dups_merged_files*
+rm -f /tmp/cache/sizes_merged_files*
 python3 scripts/make_suffix_array.py $1
 cargo run self-similar --data-file $1 --length-threshold $3 --cache-dir /tmp/cache --num-threads $4
 cargo run collect --data-file $1 --cache-dir /tmp/cache --length-threshold $3 > /tmp/drop_tokens_file
